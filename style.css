@@ -1,0 +1,238 @@
+/* Theme and layout */
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: linear-gradient(135deg, #0f1a2b, #1a273a);
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(15, 26, 43, 0.95);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 999;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-size: 1.7rem;
+  color: #00ffd0;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  color: #aaa;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ffd0;
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+section {
+  scroll-snap-align: start;
+  padding: 6rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  text-align: center;
+}
+
+.hero-content .ai-gif {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.subtitle {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-left {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background-image: url('https://via.placeholder.com/220');
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #00ffd0;
+  box-shadow: 0 0 25px rgba(0, 255, 208, 0.3);
+}
+
+.about-right {
+  width: 60%;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+.about-right h2 {
+  color: #00ffd0;
+}
+
+.about-right h3 {
+  color: #ffd700;
+  margin-top: 1.5rem;
+}
+
+.about-right p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.education-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.edu-item {
+  flex: 1 1 45%;
+  padding: 1rem;
+  background-color: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,255,208,0.1);
+}
+
+.edu-item strong {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.edu-item .emphasis {
+  font-weight: 500;
+  color: #ccc;
+}
+
+.edu-item .university {
+  color: #aaa;
+}
+
+.edu-item .date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.project-card {
+  flex: 1 1 300px;
+  background: linear-gradient(135deg, #1b1b2f, #1f2c40);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,255,208,0.05);
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  color: #fff;
+  margin: 0.5rem 0;
+}
+
+.project-card p {
+  color: #ccc;
+}
+
+.project-tag {
+  color: #ff7ac6;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 0.8rem 2rem;
+  border: 1px solid #00ffd0;
+  color: #00ffd0;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.button:hover {
+  background: #00ffd0;
+  color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #bbb;
+  background-color: #0f1a2b;
+}
+
+@media screen and (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100%;
+  }
+
+  .about-right {
+    max-height: unset;
+    overflow: visible;
+  }
+
+  .edu-item {
+    flex: 1 1 100%;
+  }
+}
